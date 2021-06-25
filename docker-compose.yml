@@ -1,17 +1,17 @@
 version: "3"
 services:
     backend01:
-        image: antosikp/task01-backend:0.3
+        image: antosikp/task01-backend:latest
         expose:
             - 80
 
     backend02:
-        image: antosikp/task01-backend:0.3
+        image: antosikp/task01-backend:latest
         expose:
             - 80
 
     haproxy:
-        image: antosikp/task01-haproxy:0.3
+        image: antosikp/task01-haproxy:latest
         links:
             - backend01
             - backend02
