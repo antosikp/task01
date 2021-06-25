@@ -1,0 +1,25 @@
+version: "3"
+services:
+    backend01:
+        image: antosikp/task01-backend:0.3
+        expose:
+            - 80
+
+    backend02:
+        image: antosikp/task01-backend:0.3
+        expose:
+            - 80
+
+    haproxy:
+        image: antosikp/task01-haproxy:0.3
+        links:
+            - backend01
+            - backend02
+
+        ports:
+            - "80:80"
+            - "70:70"
+
+        expose:
+            - "80"
+            - "70"
