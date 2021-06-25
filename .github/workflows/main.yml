@@ -26,7 +26,7 @@ jobs:
         id: docker_build_haproxy
         uses: docker/build-push-action@v2
         with:
-          context: haproxy
+          file: haproxy/Dockerfile
           push: true
           tags: antosikp/task01-haproxy:latest
       -
@@ -37,7 +37,7 @@ jobs:
         id: docker_build_backend
         uses: docker/build-push-action@v2
         with:
-          context: backend
+          file: backend/Dockerfile
           push: true
           tags: antosikp/task01-backend:latest
       -
